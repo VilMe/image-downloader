@@ -30,4 +30,11 @@ def download_image(image_url: str, name: str, folder: str = None):
     except Exception as e:
         print(f'Error: {e}')
 
-        
+
+if __name__ == '__main__':
+    input_url: str = input('Enter a url: ')
+    input_name: str = input('What would you like to call it?: ')
+
+
+    print('Downloading...')
+    download_image(input_name, name=input_name, folder='images')
