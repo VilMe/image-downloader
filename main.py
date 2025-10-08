@@ -16,7 +16,8 @@ def download_image(image_url: str, name: str, folder: str = None):
         else:
             image_name; str = f'{name}{ext}'
     else:
-        raise Exception('Image extension could not ve located')
-
-
+        raise Exception('Image extension could not be located...')
+    # Check if name already exists 
+    if os.path.isfile(image_name):
+        raise Exception('File name already exists...')
     
