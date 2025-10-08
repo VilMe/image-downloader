@@ -21,3 +21,13 @@ def download_image(image_url: str, name: str, folder: str = None):
     if os.path.isfile(image_name):
         raise Exception('File name already exists...')
     
+    # Download image
+    try: 
+        image_content: bytes = requests.get(image_url).content
+        with open(image_name, 'wb') as handler:
+            handler.write(image_content)
+            print(f'Downloaded: "{image_name}" successfully!!')
+    except Exception as e:
+        print(f'Error: {e}')
+
+        
