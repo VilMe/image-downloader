@@ -3,7 +3,7 @@ import requests
 
 
 def get_extension(image_url: str) -> str | None:
-    extensions: list[str] = ['.png', '.jpeg', '.jpg', '.gif', ',svg']
+    extensions: list[str] = ['.png', '.jpeg', '.jpg', '.gif', '.svg']
     for ext in extensions:
         if ext in image_url:
             return ext
@@ -37,4 +37,4 @@ if __name__ == '__main__':
 
 
     print('Downloading...')
-    download_image(input_name, name=input_name, folder='images')
+    download_image(input_url, name=input_name, folder='images')
